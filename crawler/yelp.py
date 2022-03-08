@@ -56,11 +56,11 @@ with table.batch_writer() as batch:
                         'name': restaurant['name'],
                         'address': restaurant['location']['display_address'],
                         'coordinates': {
-                            'latitude': restaurant['coordinates']['latitude'],
-                            'longitude': restaurant['coordinates']['longitude']
+                            'latitude': str(restaurant['coordinates']['latitude']),
+                            'longitude': str(restaurant['coordinates']['longitude'])
                         },
                         'number_of_reviews': restaurant['review_count'],
-                        'rating': restaurant['rating'],
+                        'rating': str(restaurant['rating']),
                         'zip_code': restaurant['location']['zip_code']
                     }
                 )
